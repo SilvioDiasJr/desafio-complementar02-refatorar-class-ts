@@ -12,13 +12,12 @@ import { Container } from './styles';
 import { IconBaseProps } from 'react-icons/lib';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  name: string
+  name: string;
   icon?: React.ComponentType<IconBaseProps>;
 }
 
-
 const Input = ({ name, icon: Icon,...rest }: InputProps) => {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
